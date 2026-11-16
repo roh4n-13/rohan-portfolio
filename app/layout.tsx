@@ -22,6 +22,8 @@ const accent = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rohanmakwana.vercel.app"),
+  alternates: { canonical: "/" },
   title: "Rohan Makwana — Building What's Next",
   description:
     "Rohan Makwana is a BCA student in Ahmedabad, India, exploring software, AI, and the art of building useful things. Projects, experiments, and a learning journey in public.",
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
     title: "Rohan Makwana — Building What's Next",
     description:
       "BCA student in Ahmedabad exploring software, AI, and the art of building useful things.",
+    url: "https://rohanmakwana.vercel.app",
     type: "website",
     siteName: "Rohan Makwana",
   },
@@ -45,12 +48,37 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Rohan Makwana",
+    url: "https://rohanmakwana.vercel.app",
+    jobTitle: "Aspiring Computer Scientist",
+    description:
+      "BCA student in Ahmedabad, India, exploring software, AI, and the art of building useful things.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ahmedabad",
+      addressRegion: "Gujarat",
+      addressCountry: "IN",
+    },
+    sameAs: [
+      "https://github.com/roh4n-13",
+      "https://www.instagram.com/roh4n_11/",
+    ],
+  };
   return (
     <html
       lang="en"
       className={`${display.variable} ${body.variable} ${accent.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
