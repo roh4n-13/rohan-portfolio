@@ -4,13 +4,16 @@ import { useEffect, useRef } from "react";
 import { useFinePointer, useReducedMotion } from "@/lib/hooks";
 
 /**
- * Custom cursor: a lime ring that trails the pointer with inertia,
- * plus a slower ghost ring and a snappy center dot so the cursor feels
- * physical, like it has weight. The native cursor is hidden while this
- * runs — the ring IS the pointer — but only via a `custom-cursor` class
- * added here once the effect starts, so if JS fails the native cursor
- * simply stays. Renders only on fine-pointer devices; touch devices
- * and reduced-motion users get nothing (and keep their native cursor).
+ * Custom cursor: a ring that trails the pointer with inertia, plus a
+ * slower ghost ring and a snappy center dot so the cursor feels
+ * physical, like it has weight. The rings are white with
+ * mix-blend-difference, so they invert against whatever sits behind
+ * them — dark hero, lime 3D shapes, light paper — and never blend into
+ * the theme. The native cursor is hidden while this runs — the ring IS
+ * the pointer — but only via a `custom-cursor` class added here once
+ * the effect starts, so if JS fails the native cursor simply stays.
+ * Renders only on fine-pointer devices; touch devices and
+ * reduced-motion users get nothing (and keep their native cursor).
  * The ring scales up over interactive elements and presses in slightly
  * on mousedown; the dot pops a little at the same moment.
  */
@@ -101,12 +104,12 @@ export default function Cursor() {
       <div
         ref={ringRef}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[90] h-8 w-8 rounded-full border-2 border-lime-deep opacity-0 transition-opacity duration-300"
+        className="pointer-events-none fixed left-0 top-0 z-[90] h-8 w-8 rounded-full border-2 border-white opacity-0 mix-blend-difference transition-opacity duration-300"
       />
       <div
         ref={dotRef}
         aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-[91] h-1.5 w-1.5 rounded-full bg-lime-deep opacity-0 transition-opacity duration-300"
+        className="pointer-events-none fixed left-0 top-0 z-[91] h-1.5 w-1.5 rounded-full bg-white opacity-0 mix-blend-difference transition-opacity duration-300"
       />
     </>
   );
