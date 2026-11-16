@@ -29,6 +29,11 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   overflow-x: hidden;
+  /* The custom lime ring is the pointer; keep the native cursor as an
+     arrow everywhere so browsers never switch to the I-beam over text.
+     Links still get the UA pointer, and anything with an explicit cursor
+     class keeps it. */
+  cursor: default;
 }
 
 ::selection {
