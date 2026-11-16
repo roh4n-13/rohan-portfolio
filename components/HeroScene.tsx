@@ -60,9 +60,9 @@ export default function HeroScene() {
       limePoint.position.set(-4, -2, 3);
       scene.add(limePoint);
 
-      /* ---- Particle wave: denser and brighter than before ---- */
-      const cols = isSmall ? 64 : 110;
-      const rows = isSmall ? 36 : 60;
+      /* ---- Particle wave: calmer than before, kept below the copy ---- */
+      const cols = isSmall ? 64 : 88;
+      const rows = isSmall ? 36 : 48;
       const count = cols * rows;
       const positions = new Float32Array(count * 3);
       const xs: number[] = [];
@@ -85,11 +85,11 @@ export default function HeroScene() {
         color: 0x9dc22e,
         size: 0.08,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.35,
         sizeAttenuation: true,
       });
       const wave = new THREE.Points(waveGeo, waveMat);
-      wave.position.y = -2.2;
+      wave.position.y = -2.7;
       wave.rotation.x = 0.55;
       scene.add(wave);
       const posAttr = waveGeo.getAttribute("position") as THREE.BufferAttribute;
@@ -111,7 +111,7 @@ export default function HeroScene() {
       const limeMat = new THREE.MeshStandardMaterial({
         color: 0xc8f542,
         emissive: 0xc8f542,
-        emissiveIntensity: 0.9,
+        emissiveIntensity: 0.45,
         metalness: 0.2,
         roughness: 0.3,
       });
@@ -120,7 +120,7 @@ export default function HeroScene() {
         metalness: 0.1,
         roughness: 0.5,
       });
-      const shardCount = isSmall ? 12 : 28;
+      const shardCount = isSmall ? 12 : 16;
       type Shard = {
         mesh: THREE.Mesh;
         baseY: number;
@@ -135,10 +135,11 @@ export default function HeroScene() {
           s % 4 === 3 ? limeMat : s % 5 === 4 ? paperMat : darkMat,
         );
         mesh.scale.setScalar(0.7 + Math.random() * 0.6);
+        // Keep the center clear: shards live in the left/right edge
+        // bands (|x| 5.5–13) so none drift across the headline.
+        const side = s % 2 === 0 ? -1 : 1;
         const x =
-          -13 +
-          (s / Math.max(shardCount - 1, 1)) * 26 +
-          (Math.random() - 0.5) * 3.5;
+          side * (5.5 + Math.random() * 7.5) + (Math.random() - 0.5) * 1.5;
         const y = -1 + Math.random() * 4.5;
         const z = -8 + Math.random() * 5;
         mesh.position.set(x, y, z);
@@ -169,7 +170,7 @@ export default function HeroScene() {
       const ringMat = new THREE.LineBasicMaterial({
         color: 0xc8f542,
         transparent: true,
-        opacity: 0.3,
+        opacity: 0.15,
       });
       const ringGeo1 = new THREE.TorusGeometry(8.5, 0.03, 8, 72);
       const ring1 = new THREE.LineSegments(
@@ -295,7 +296,7 @@ export default function HeroScene() {
           s.mesh.rotation.y = t * s.rsy;
           s.mesh.position.y = s.baseY + Math.sin(t * 0.6 + s.phase) * 0.35;
         }
-        wave.position.y = -2.2 - window.scrollY * 0.0004;
+        wave.position.y = -2.7 - window.scrollY * 0.0004;
         renderer.render(scene, camera);
       };
 

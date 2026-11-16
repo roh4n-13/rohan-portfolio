@@ -169,11 +169,20 @@ export default function Hero({ start }: HeroProps) {
         className="pointer-events-none absolute inset-0"
       >
         <HeroScene />
-        <span ref={watermarkRef} className="text-outline-paper absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-display text-[24rem] font-bold leading-none opacity-25 lg:block">
+        <span ref={watermarkRef} className="text-outline-paper absolute -right-6 top-1/2 hidden -translate-y-1/2 select-none font-display text-[24rem] font-bold leading-none opacity-[0.12] lg:block">
           RM
         </span>
         <Spotlight />
       </div>
+
+      {/* Readability scrim: a soft dark veil behind the headline and
+          intro column only, fading toward the edges. The 3D stays fully
+          visible around the copy; it just stops crossing through it.
+          Legibility layer, not decoration. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[5] bg-[radial-gradient(ellipse_78%_68%_at_50%_46%,rgba(12,12,9,0.72),rgba(12,12,9,0)_72%)]"
+      />
 
       <div
         ref={contentRef}
@@ -188,7 +197,7 @@ export default function Hero({ start }: HeroProps) {
 
         <h1
           ref={headlineRef}
-          className="font-display text-[13.5vw] font-bold leading-[0.92] tracking-tight sm:text-[11vw] lg:text-[clamp(6rem,11vw,10rem)]"
+          className="font-display text-[13.5vw] font-bold leading-[1.0] tracking-tight sm:text-[11vw] lg:text-[clamp(6rem,11vw,8.5rem)]"
         >
           {profile.heroHeadline.map((line, i) => (
             <span key={line} className="block overflow-hidden pb-1">
@@ -228,13 +237,13 @@ export default function Hero({ start }: HeroProps) {
           ))}
         </h1>
 
-        <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:items-start">
+        <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-7">
             <p className="max-w-xl text-base leading-relaxed text-paper/70 sm:text-lg">
               {profile.heroCopy}
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Magnetic>
                 <button
                   type="button"
