@@ -120,7 +120,7 @@ export default function HeroScene() {
         metalness: 0.1,
         roughness: 0.5,
       });
-      const shardCount = isSmall ? 12 : 16;
+      const shardCount = isSmall ? 12 : 12;
       type Shard = {
         mesh: THREE.Mesh;
         baseY: number;
@@ -130,10 +130,19 @@ export default function HeroScene() {
       };
       const shards: Shard[] = [];
       for (let s = 0; s < shardCount; s++) {
-        const mesh = new THREE.Mesh(
-          shardGeos[s % shardGeos.length],
-          s % 4 === 3 ? limeMat : s % 5 === 4 ? paperMat : darkMat,
-        );
+        // Tori never glow lime: a bright lime ring reads as a target,
+        // pulls the eye, and can land on the right-hand copy. Lime stays
+        // on the small solid shards only.
+        const geoIndex = s % shardGeos.length;
+        const mat =
+          geoIndex === 3
+            ? darkMat
+            : s % 5 === 4
+              ? paperMat
+              : s % 6 === 5
+                ? limeMat
+                : darkMat;
+        const mesh = new THREE.Mesh(shardGeos[geoIndex], mat);
         mesh.scale.setScalar(0.7 + Math.random() * 0.6);
         // Keep the center clear: shards live in the left/right edge
         // bands (|x| 5.5–13) so none drift across the headline.
