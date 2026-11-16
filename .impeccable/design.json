@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T15:00:00+05:30",
+  "title": "Design System: Rohan Makwana",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#faf8f3",
+        "tonalRamp": [
+          "#362d16",
+          "#5a4b25",
+          "#7e6934",
+          "#b4964b",
+          "#cbb681",
+          "#ded1b0",
+          "#ede6d4",
+          "#f8f4ed"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Shadow",
+        "canonical": "#f0ede5",
+        "tonalRamp": [
+          "#312b1c",
+          "#51482f",
+          "#716441",
+          "#a28f5d",
+          "#beb18e",
+          "#d6ceb8",
+          "#e9e4d8",
+          "#f6f4ef"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#16150f",
+        "tonalRamp": [
+          "#2d2b1f",
+          "#4c4834",
+          "#6a6548",
+          "#989167",
+          "#b7b295",
+          "#d2cebc",
+          "#e6e5db",
+          "#f5f4f0"
+        ]
+      },
+      "coal": {
+        "role": "neutral",
+        "displayName": "Coal",
+        "canonical": "#0c0c09",
+        "tonalRamp": [
+          "#2c2c21",
+          "#494937",
+          "#66664c",
+          "#92926d",
+          "#b3b399",
+          "#cfcfbf",
+          "#e5e5dc",
+          "#f4f4f0"
+        ]
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Acid Lime",
+        "canonical": "#c8f542",
+        "tonalRamp": [
+          "#374904",
+          "#5c7906",
+          "#81aa09",
+          "#b9f20d",
+          "#cef655",
+          "#e0f994",
+          "#eefcc5",
+          "#f8fee7"
+        ]
+      },
+      "lime-deep": {
+        "role": "primary",
+        "displayName": "Deep Lime",
+        "canonical": "#9dc22e",
+        "tonalRamp": [
+          "#323e0f",
+          "#536718",
+          "#759022",
+          "#a7ce31",
+          "#c1dd6f",
+          "#d8e9a4",
+          "#eaf3ce",
+          "#f6faea"
+        ]
+      },
+      "silver": {
+        "role": "neutral",
+        "displayName": "Silver",
+        "canonical": "#b9bdb2",
+        "tonalRamp": [
+          "#272923",
+          "#41453b",
+          "#5b6052",
+          "#828976",
+          "#a8ad9f",
+          "#c8cbc3",
+          "#e1e3de",
+          "#f3f3f1"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e3dfd3",
+        "tonalRamp": [
+          "#2f2b1e",
+          "#4e4732",
+          "#6d6345",
+          "#9c8e63",
+          "#bab092",
+          "#d3cdba",
+          "#e7e4da",
+          "#f5f4ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headlines, section headings, project titles. Space Grotesk bold, tight tracking."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and supporting copy. Inter regular, relaxed leading."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, section indices, small buttons. Inter semibold, wide tracking, 11px rising to 12px at sm."
+      },
+      "accent": {
+        "displayName": "Accent",
+        "purpose": "Single accent words only. Instrument Serif italic."
+      }
+    },
+    "shadows": [
+      {
+        "name": "orb-lift",
+        "value": "0 10px 15px rgba(0,0,0,0.1)",
+        "purpose": "Inertia-follower orb only."
+      },
+      {
+        "name": "active-node",
+        "value": "0 4px 6px rgba(0,0,0,0.1)",
+        "purpose": "Selected constellation node only."
+      },
+      {
+        "name": "pressed-card-edge",
+        "value": "0 2px 0 0 #16150f",
+        "purpose": "Selected technology card only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "0.2s ease",
+        "purpose": "Default state transitions on buttons, chips, cards."
+      },
+      {
+        "name": "ease-card",
+        "value": "0.3s ease",
+        "purpose": "Card border and hover transitions."
+      },
+      {
+        "name": "ease-curtain",
+        "value": "0.7s cubic-bezier(0.76, 0, 0.24, 1)",
+        "purpose": "Intro curtain lift."
+      },
+      {
+        "name": "marquee",
+        "value": "28s linear infinite",
+        "purpose": "Marquee strip loop."
+      },
+      {
+        "name": "scroll-dot",
+        "value": "1.8s ease-in-out infinite",
+        "purpose": "Scroll cue dot."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action on dark surfaces. Paper fill, ink text, pill shape.",
+      "html": "<button class=\"ds-btn-primary\">View projects</button>",
+      "css": ".ds-btn-primary { background: #faf8f3; color: #16150f; padding: 14px 28px; border: none; border-radius: 9999px; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; transition: background 0.2s ease; } .ds-btn-primary:hover { background: #c8f542; } .ds-btn-primary:focus-visible { outline: 2px solid #9dc22e; outline-offset: 3px; }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "High-attention action, e.g. APK download. Lime fill, ink text, pill shape.",
+      "html": "<button class=\"ds-btn-accent\">Download APK</button>",
+      "css": ".ds-btn-accent { background: #c8f542; color: #16150f; padding: 12px 20px; border: none; border-radius: 9999px; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s ease; } .ds-btn-accent:hover { background: #faf8f3; } .ds-btn-accent:focus-visible { outline: 2px solid #9dc22e; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on dark surfaces. Transparent fill, paper text, hairline border.",
+      "html": "<button class=\"ds-btn-ghost\">GitHub</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #faf8f3; padding: 12px 20px; border: 1px solid rgba(250,248,243,0.3); border-radius: 9999px; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease; } .ds-btn-ghost:hover { border-color: #faf8f3; background: rgba(250,248,243,0.1); } .ds-btn-ghost:focus-visible { outline: 2px solid #9dc22e; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small informational or filter tag. Pill outline, xs semibold text.",
+      "html": "<span class=\"ds-chip\">Kotlin</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid rgba(250,248,243,0.2); border-radius: 9999px; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 500; color: rgba(250,248,243,0.8); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Featured project panel on dark sections. Translucent paper over coal, 24px corners.",
+      "html": "<div class=\"ds-card-project\"><span class=\"ds-card-kicker\">01 \u00b7 Featured project</span><h3 class=\"ds-card-title\">Muse Task App</h3><p class=\"ds-card-body\">A local-first Android task manager.</p></div>",
+      "css": ".ds-card-project { background: rgba(250,248,243,0.04); border: 1px solid rgba(250,248,243,0.15); border-radius: 24px; padding: 24px; transition: border-color 0.3s ease; } .ds-card-project:hover { border-color: rgba(250,248,243,0.3); } .ds-card-kicker { font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; color: rgba(250,248,243,0.6); } .ds-card-title { font-family: 'Space Grotesk', Inter, system-ui, sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.025em; color: #faf8f3; margin: 8px 0 0 0; } .ds-card-body { font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.625; color: rgba(250,248,243,0.7); margin: 16px 0 0 0; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed top bar. Transparent over the hero, 85% paper with blur once scrolled.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">RM</span><span class=\"ds-nav-links\"><a href=\"#\">Projects</a><a href=\"#\">Playground</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: rgba(250,248,243,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #e3dfd3; } .ds-nav-mark { font-family: 'Space Grotesk', Inter, system-ui, sans-serif; font-size: 14px; font-weight: 700; color: #16150f; } .ds-nav-links { display: flex; gap: 20px; } .ds-nav-links a { font-family: Inter, system-ui, sans-serif; font-size: 14px; color: rgba(22,21,15,0.6); text-decoration: none; } .ds-nav-links a:hover { color: #9dc22e; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Dark Workbench",
+    "overview": "A dark, tactile workshop where everything responds to touch. The hero is a dark, cinematic, touch-reactive 3D scene; the sections that follow are calm paper, and the whole site is built around one idea: touch it, it moves. Nothing on the page is decorative for its own sake \u2014 every effect answers the pointer, the scroll, or the tap.",
+    "keyCharacteristics": [
+      "Dark-first hero on coal, light paper sections after it, one lime accent throughout.",
+      "Pill shapes for every button and chip; large soft cards (24px) for panels.",
+      "Outlined display type whose accent words fill on hover.",
+      "Film grain on dark surfaces; flat tonal layering instead of shadows.",
+      "Motion is pointer-driven and skippable; reduced-motion users never see the intro."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Lime is the only accent color. It marks action and attention, never decoration for its own sake.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Depth comes from tonal steps (paper to paper-2, paper at 4\u20135% over coal), never from a second accent or a gradient wash.",
+        "section": "colors"
+      },
+      {
+        "name": "The Outline-Only-For-Accent Rule",
+        "body": "Outlined display text (1.5px stroke, transparent fill) is for accent words and final heading lines only \u2014 never for body copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Serif Rule",
+        "body": "Instrument Serif italic appears on single accent words only, never on sentences.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. Shadows appear only as a response to state (hover, selection, activation).",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do take every color, font, and radius from the @theme tokens in app/globals.css.",
+      "Do keep lime as the single accent; use deep lime for focus and small markers.",
+      "Do keep outlined type to accent words and final heading lines.",
+      "Do preserve the reduced-motion alternatives exactly as implemented.",
+      "Do keep buttons as real buttons with visible focus outlines."
+    ],
+    "donts": [
+      "Don't add gradient blobs or washes \u2014 the owner had them removed as template-looking.",
+      "Don't add new projects or sections beyond the one featured project.",
+      "Don't nest cards inside cards.",
+      "Don't use Inter for display type or Space Grotesk for body copy.",
+      "Don't invent claims, metrics, clients, or awards in any new surface.",
+      "Don't use a second accent color alongside lime."
+    ]
+  }
+}
