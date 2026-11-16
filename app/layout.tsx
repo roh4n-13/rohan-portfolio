@@ -24,6 +24,9 @@ const accent = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rohanmakwana.vercel.app"),
   alternates: { canonical: "/" },
+  verification: {
+    google: "EScX6zVF5IeFqGzva0ZPbc0AER3wquQHlg3YP6YqS1w",
+  },
   title: "Rohan Makwana — Building What's Next",
   description:
     "Rohan Makwana is a BCA student in Ahmedabad, India, exploring software, AI, and the art of building useful things. Projects, experiments, and a learning journey in public.",
