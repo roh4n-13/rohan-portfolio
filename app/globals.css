@@ -29,6 +29,20 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   overflow-x: hidden;
+  /* Fallback when the custom cursor is not running: keep the native
+     cursor as an arrow everywhere so browsers never switch to the
+     I-beam over text. Links still get the UA pointer. */
+  cursor: default;
+}
+
+/* Custom cursor active (class added by Cursor.tsx only while the rings
+   are actually running): hide the native cursor everywhere — links and
+   buttons included — so only the lime ring shows. If JS fails, or on
+   touch / reduced-motion, the class is never added and the native
+   cursor above stays. */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
 }
 
 ::selection {

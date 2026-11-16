@@ -173,8 +173,8 @@ Pill-first: every button and chip is fully rounded (9999px). Panels use large so
 - **Links:** small text, muted paper on dark, turning lime on hover; the mobile menu is a labeled dialog with a labeled close button.
 
 ### Signature Component: Round Cursor
-- **Style:** three layers — a lime ring that follows the pointer, a slower ghost ring, and a center dot. The native cursor is never hidden, and the rings only appear for fine pointers.
-- **Behavior:** the main ring scales up over interactive elements; the whole cursor is hidden from assistive technology and disabled for reduced-motion users.
+- **Style:** three layers — a ring that follows the pointer, a slower ghost ring, and a center dot. The rings are white with difference blending, so they invert against any background and never blend into the theme. The native cursor is hidden while the rings run (the ring IS the pointer); the class that hides it is only added once the cursor is actually running, so a JS failure leaves the native cursor in place. The rings only appear for fine pointers.
+- **Behavior:** the main ring scales up over interactive elements and presses in slightly on mousedown while the dot pops; the whole cursor is hidden from assistive technology and disabled for reduced-motion users.
 
 ## Do's and Don'ts
 

@@ -19,8 +19,8 @@ export const profile = {
   heroLabel: "Ahmedabad, India · Developer in progress",
   education: "Bachelor of Computer Applications (BCA)",
   university: "Gujarat University",
-  graduation: "2028",
-  positioning: "Aspiring Software Developer",
+  graduation: "2029",
+  positioning: "Aspiring Computer Scientist",
   heroHeadline: ["BUILDING", "WHAT'S NEXT."],
   heroCopy:
     "I'm Rohan — a BCA student exploring software, AI, and the art of building useful things.",
