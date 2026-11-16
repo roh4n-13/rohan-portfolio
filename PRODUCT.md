@@ -13,7 +13,7 @@ web
 
 ## Product Purpose
 
-Present Rohan Makwana, a BCA student at Gujarat University (2025–2028), as an aspiring software developer open to fresher roles in Ahmedabad and remote. Success means a recruiter can verify his capability from one real shipped project and contact him.
+Present Rohan Makwana, a BCA student at Gujarat University (2025–2029), as an aspiring computer scientist open to fresher roles in Ahmedabad and remote. Success means a recruiter can verify his capability from one real shipped project and contact him.
 
 ## Positioning
 
