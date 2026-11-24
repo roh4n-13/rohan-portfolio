@@ -37,12 +37,21 @@ export const metadata: Metadata = {
     url: "https://rohanmakwana.vercel.app",
     type: "website",
     siteName: "Rohan Makwana",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Rohan Makwana — Building What's Next. BCA student in Ahmedabad, India.",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Rohan Makwana — Building What's Next",
     description:
       "BCA student in Ahmedabad exploring software, AI, and the art of building useful things.",
+    images: ["/og.png"],
   },
 };
 
